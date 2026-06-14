@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Soft "lab bench" backdrop */
+.bench-bg {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #eef2ff 0%, transparent 55%),
+    radial-gradient(1000px 500px at 100% 0%, #fce7f3 0%, transparent 45%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Speech-bubble message list scrollbar */
+.msg-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.msg-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-pop-in {
+  animation: pop-in 220ms ease-out both;
+}
